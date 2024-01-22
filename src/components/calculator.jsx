@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import frame from "../assets/Frame 30.svg";
+// import frame from "../assets/Frame 30.svg";
+import Imgover from "./imghover";
 
 const Calculator = () => {
   const [day, setDay] = useState("");
@@ -11,11 +12,13 @@ const Calculator = () => {
     months: 0,
     days: 0,
   });
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+
   const onSubmit = (data) => {
     const submittedDate = new Date(
       `${data.number2}/${data.number}/${data.text}`
@@ -55,11 +58,11 @@ const Calculator = () => {
   const handleDayChange = (event) => {
     const input = event.target.value;
 
-    // Validate input as a number with a length between 1 and 4
     if (/^\d{0,2}$/.test(input)) {
       setDay(input);
     }
   };
+
   const handleMonthChange = (event) => {
     const input = event.target.value;
 
@@ -75,6 +78,7 @@ const Calculator = () => {
       setYear(input);
     }
   };
+
   return (
     <div className="font">
       <div
@@ -92,6 +96,7 @@ const Calculator = () => {
               <input
                 className={`h-[4.5rem] w-[10rem] gap-[1rem] py-[0.75rem] px-[1.5rem]
                text-[2rem] font-[700] rounded-[0.5rem] border-2 border-[#DCDCDC]
+               cursor-pointer
                max-sm:h-[3.375rem] max-sm:w-[5.47915rem] max-sm:text-[1.25rem] 
                max-sm:px-[1rem] ${errors.number && "border-[#FF5959]"}`}
                 {...register("number", {
@@ -190,11 +195,14 @@ const Calculator = () => {
           <div>
             <button className="flex max-sm:self-stretch items-center  relative  max-sm:mt-5">
               <div className="w-[39.5rem] m-auto h-[0.0625rem] bg-[#DCDCDC] max-sm:self-stretch max-sm:w-[18.4375rem]"></div>
-              <img
-                className="items-center max-sm:w-[4rem] max-sm:h-[4rem] max-sm:ml-[-11rem] relative  justify-center  "
+              {/* <img
+                className="items-center hover:text-black max-sm:w-[4rem] max-sm:h-[4rem] max-sm:ml-[-11rem] relative  justify-center  "
                 src={frame}
                 alt=""
-              />
+              /> */}
+              <div className="text-[#854DFF] hover:text-black">
+                {/* <Imgover color="#854DFF" '/> */}
+              </div>
             </button>
           </div>
         </form>
