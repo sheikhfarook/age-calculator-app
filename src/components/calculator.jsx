@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-// import frame from "../assets/Frame 30.svg";
-import Imgover from "./imghover";
+import frame from "../assets/Frame 30.svg";
+// import Imgover from "./imghover";
 
 const Calculator = () => {
   const [day, setDay] = useState("");
@@ -195,14 +195,14 @@ const Calculator = () => {
           <div>
             <button className="flex max-sm:self-stretch items-center  relative  max-sm:mt-5">
               <div className="w-[39.5rem] m-auto h-[0.0625rem] bg-[#DCDCDC] max-sm:self-stretch max-sm:w-[18.4375rem]"></div>
-              {/* <img
+              <img
                 className="items-center hover:text-black max-sm:w-[4rem] max-sm:h-[4rem] max-sm:ml-[-11rem] relative  justify-center  "
                 src={frame}
                 alt=""
-              /> */}
-              <div className="text-[#854DFF] hover:text-black">
+              />
+              {/* <div className="text-[#854DFF] hover:text-black">
                 {/* <Imgover color="#854DFF" '/> */}
-              </div>
+              {/* </div> */}
             </button>
           </div>
         </form>
